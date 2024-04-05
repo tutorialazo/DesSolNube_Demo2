@@ -9,6 +9,5 @@
 
 	$db = pg_connect("$host $port $dbname $user $password");
 
-	return $db;
-}
+	return $db;}
 ?>
