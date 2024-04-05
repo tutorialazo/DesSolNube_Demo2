@@ -1,11 +1,11 @@
 <?php
 	function conexion(){
 
-	$host = "host=xxxx";
-	$port = "port=xxxx";
-	$dbname = "dbname=xxxx";
-	$user = "user=xxxx";
-	$password = "password=xxxx";
+	$host = "host=monorail.proxy.rlwy.net";
+	$port = "port=22301";
+	$dbname = "dbname=railway";
+	$user = "user=postgres";
+	$password = "password=wAVMkgugRabZehMCDyvCykUYtdpTpbPe";
 
 	$db = pg_connect("$host $port $dbname $user $password");
 
