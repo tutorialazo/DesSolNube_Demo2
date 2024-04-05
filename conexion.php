@@ -7,7 +7,10 @@
 	$user = "user=postgres";
 	$password = "password=wAVMkgugRabZehMCDyvCykUYtdpTpbPe";
 
-	$db = pg_connect("$host $port $dbname $user $password");
+	$cadena = "$host $port $dbname $user $password";
 
-	return $db;}
+	$db = pg_connect($cadena);
+
+	return $db;
+}
 ?>
