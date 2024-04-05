@@ -2,11 +2,11 @@
 
 	function conexion(){
 
-	$host = "host=containers-us-west-173.railway.app";
-	$port = "port=6928";
+	$host = "host=monorail.proxy.rlwy.net";
+	$port = "port=22301";
 	$dbname = "dbname=railway";
 	$user = "user=postgres";
-	$password = "password=dS8fvl7EvlUbyCUI9oaH";
+	$password = "password=wAVMkgugRabZehMCDyvCykUYtdpTpbPe";
 
 	$db = pg_connect("$host $port $dbname $user $password");
 
