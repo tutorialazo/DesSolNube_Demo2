@@ -16,31 +16,32 @@
     <style>
       h1 {
         font-weight: bold;
-        color: pink; /* Cambiar el a rosado */
+        color: pink; /* Cambiar el color del texto a rosado */
       }
+      
       .card-container {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
       }
-
+    
       .card {
         box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
       }
-
-    .btn-pink {
+    
+      .btn-pink {
         color: #fff;
         background-color: #ff69b4; /* Color rosado */
         border-color: #ff69b4; /* Color de borde */
-    }
-    
-    .btn-pink:hover {
+      }
+      
+      .btn-pink:hover {
         background-color: #ff1493; /* Cambia el color de fondo al pasar el ratón */
         border-color: #ff1493; /* Cambia el color del borde al pasar el ratón */
-    }
-      
-    </style>
+      }
+   </style>
+
 
   </head>
 
