@@ -32,13 +32,13 @@
     
       .btn-pink {
         color: #fff;
-        background-color: #ff69b4; /* Color rosado */
-        border-color: #ff69b4; /* Color de borde */
+        background-color: #ff69b4; 
+        border-color: #ff69b4; 
       }
       
       .btn-pink:hover {
-        background-color: #ff1493; /* Cambia el color de fondo al pasar el ratón */
-        border-color: #ff1493; /* Cambia el color del borde al pasar el ratón */
+        background-color: #ff1493; 
+        border-color: #ff1493; 
       }
    </style>
 
