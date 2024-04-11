@@ -14,9 +14,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <style>
-      h1 {
-        font-weight: bold;
-        color: pink; /* Cambiar el color del texto a rosado */
+      h1, .btn-pink {
+        color: pink; /* Cambiar el color del texto y del botón a rosado */
       }
       .card-container {
         display: flex;
@@ -28,17 +27,7 @@
       .card {
         box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
       }
-      .btn-pink {
-        color: #fff;
-        background-color: #ff69b4; /* Color rosado */
-        border-color: #ff69b4; /* Color de borde */
-     }
-    
-     .btn-pink:hover {
-        background-color: #ff1493; /* Cambia el color de fondo al pasar el ratón */
-        border-color: #ff1493; /* Cambia el color del borde al pasar el ratón */
-    } 
-        
+      
     </style>
 
   </head>
@@ -97,7 +86,7 @@
                 </div>
               </div>
             </div>
-            <input type="submit" class="btn btn-pink float-right" value="Registrar">
+            <input type="submit" class="btn btn-info float-right btn-pink" value="Registrar">
           </form>
         </div>
       </div>
@@ -115,9 +104,4 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-  </body>
-</html>
+    <script src="https://code
