@@ -24,13 +24,18 @@
             align-items: center;
             height: 100%;
         }
+
+        /* Reducir el margen superior del título */
+        .main-title {
+            margin-top: 1rem;
+        }
     </style>
 </head>
 
 <body>
 
     <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-        <h5 class="my-0 mr-md-auto font-weight-normal"><img src="index2.png" style="width: 30px; position: absolute;"> <span style="position: relative; left: 35px;">Index</span></h5>
+        <h5 class="my-0 mr-md-auto font-weight-normal main-title"><img src="index2.png" style="width: 30px; position: absolute;"> <span style="position: relative; left: 35px;">Index</span></h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="#">Registrar</a>
             <a class="p-2 text-dark" href="#">Actualizar</a>
@@ -38,7 +43,7 @@
         </nav>
     </header>
 
-    <main class="container px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <main class="container px-3 py-3 pt-md-4 pb-md-4 mx-auto text-center">
         <h1 class="display-4">Registrando datos with Railway</h1>
         <p class="lead">PostgreSQL + PHP</p>
     </main>
