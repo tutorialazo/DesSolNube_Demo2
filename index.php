@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <style>
+      body {
+        background-color: black;
+      }
       h1 {
         font-weight: bold;
       }
@@ -22,7 +25,6 @@
         justify-content: center;
         align-items: center;
         height: 100%;
-        background-color: black;
       }
 
       .card {
