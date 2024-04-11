@@ -15,9 +15,10 @@
 
     <style>
       h1 {
-        font-weight: bold;
-        color: pink; /* Cambiar el color del texto a rosado */
+      font-weight: bold;
+      color: pink !important; /* Cambiar el color del texto a rosado */
       }
+
       
       .card-container {
         display: flex;
