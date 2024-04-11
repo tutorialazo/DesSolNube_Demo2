@@ -9,6 +9,10 @@
 
 	$db = pg_connect("$host $port $dbname $user $password");
 
+	if (!$db) {
+    	die("Error al conectar con PostgreSQL: " . pg_last_error());
+	}
+
 	return $db;
 }
 ?>
