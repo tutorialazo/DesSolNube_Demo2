@@ -15,7 +15,7 @@
 
     <style>
       h1, .btn-pink {
-        color: pink; /* Cambiar el color del texto y del botón a rosado */
+        color: pink; /* Cambiar el color rosado */
       }
       .card-container {
         display: flex;
