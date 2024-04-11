@@ -11,5 +11,5 @@ $cel = $_POST["cel"];
 $sql = "insert into persona values(default,'$doc','$nom','$ape','$dir','$cel')";
 pg_query($con, $sql);
 
-header("location:listar_SandyLeiva.php");
+header("location:listar}.php");
 ?>
