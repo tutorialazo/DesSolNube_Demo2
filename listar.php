@@ -17,6 +17,36 @@
     
   </head>
 
+  <style>
+      h1 {
+        font-weight: bold;
+        color: pink; /* Cambiar el color del texto a rosado */
+      }
+
+      
+      .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    
+      .card {
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+      }
+    
+      .btn-pink {
+        color: #fff;
+        background-color: #ff69b4; 
+        border-color: #ff69b4; 
+      }
+      
+      .btn-pink:hover {
+        background-color: #ff1493; 
+        border-color: #ff1493; 
+      }
+   </style>
+
   <body>
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
@@ -29,53 +59,9 @@
     </div>
 
     <div class="container px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Registrando datos with Railway</h1>
+      <h1 class="display-4">Listado</h1>
       <p class="lead">PostgreSQL + PHP</p>
     </div>
-
-    <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <!-- Formulario para registrar nuevas personas -->
-          <form autocomplete="off" action="index-post.php" method="post">
-            <div class="row">
-              <div class="col-sm-4 col-4">
-                <div class="form-group">
-                  <label>Nro Documento</label>
-                  <input type="text" name="doc" maxlength="8" class="form-control">
-                </div>
-              </div>
-              <div class="col-sm-4 col-4">
-                <div class="form-group">
-                  <label>Nombre</label>
-                  <input type="text" name="nom" class="form-control">
-                </div>
-              </div>
-              <div class="col-sm-4 col-4">
-                <div class="form-group">
-                  <label>Apellidos</label>
-                  <input type="text" name="ape" class="form-control">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-4 col-4">
-                <div class="form-group">
-                  <label>Direccion</label>
-                  <input type="text" name="dir" class="form-control">
-                </div>
-              </div>
-              <div class="col-sm-4 col-4">
-                <div class="form-group">
-                  <label>Celular</label>
-                  <input type="text" name="cel" class="form-control">
-                </div>
-              </div>
-            </div>
-            <input type="submit" class="btn btn-primary float-right" value="Registrar">
-          </form>
-        </div>
-      </div>
 
       <!-- Tabla para mostrar los datos de las personas -->
       <div class="card mt-5">
