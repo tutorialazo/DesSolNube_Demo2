@@ -12,6 +12,19 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <style>
+        /* Estilo para centrar la tarjeta en la página */
+        body, html {
+            height: 100%;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,8 +43,8 @@
         <p class="lead">PostgreSQL + PHP</p>
     </main>
 
-    <div class="container">
-        <div class="card">
+    <div class="card-container">
+        <div class="card shadow">
             <div class="card-body">
                 <form autocomplete="off" action="index-post.php" method="post">
                     <div class="row">
@@ -72,16 +85,16 @@
                 </form>
             </div>
         </div>
-
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <img class="mb-2" src="https://www.svgrepo.com/show/508391/uncle.svg" alt="" width="24" height="24">
-                    <small class="d-block mb-3 text-muted">&copy; 2023-1</small>
-                </div>
-            </div>
-        </footer>
     </div>
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <img class="mb-2" src="https://www.svgrepo.com/show/508391/uncle.svg" alt="" width="24" height="24">
+                <small class="d-block mb-3 text-muted">&copy; 2023-1</small>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

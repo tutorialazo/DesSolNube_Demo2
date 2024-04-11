@@ -12,6 +12,19 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <style>
+        /* Estilo para centrar la tarjeta en la página */
+        body, html {
+            height: 100%;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,86 +43,88 @@
         <p class="lead">PostgreSQL + PHP</p>
     </main>
 
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <form autocomplete="off" action="index-post.php" method="post">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="doc">Nro Documento</label>
-                                <input type="text" id="doc" name="doc" maxlength="8" class="form-control">
+    <div class="card-container">
+        <div class="container">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form autocomplete="off" action="index-post.php" method="post">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="doc">Nro Documento</label>
+                                    <input type="text" id="doc" name="doc" maxlength="8" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="nom">Nombre</label>
+                                    <input type="text" id="nom" name="nom" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="ape">Apellidos</label>
+                                    <input type="text" id="ape" name="ape" class="form-control">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="nom">Nombre</label>
-                                <input type="text" id="nom" name="nom" class="form-control">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="dir">Direccion</label>
+                                    <input type="text" id="dir" name="dir" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="cel">Celular</label>
+                                    <input type="text" id="cel" name="cel" class="form-control">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="ape">Apellidos</label>
-                                <input type="text" id="ape" name="ape" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="dir">Direccion</label>
-                                <input type="text" id="dir" name="dir" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="cel">Celular</label>
-                                <input type="text" id="cel" name="cel" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <input type="submit" class="btn btn-primary float-right" value="Registrar">
-                </form>
+                        <input type="submit" class="btn btn-primary float-right" value="Registrar">
+                    </form>
+                </div>
             </div>
-        </div>
 
-        <div class="card mt-5">
-            <div class="card-body">
-                <h2 class="card-title">Lista de Personas</h2>
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Nro Documento</th>
-                                <th>Nombre</th>
-                                <th>Apellidos</th>
-                                <th>Dirección</th>
-                                <th>Celular</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            include("conexion.php");
-                            $con = conexion();
-                            $sql = "SELECT * FROM persona";
-                            $resultado = pg_query($con, $sql);
-                            if ($resultado) {
-                                while ($fila = pg_fetch_assoc($resultado)) {
-                                    echo "<tr>";
-                                    echo "<td>" . $fila['documento'] . "</td>";
-                                    echo "<td>" . $fila['nombre'] . "</td>";
-                                    echo "<td>" . $fila['apellido'] . "</td>";
-                                    echo "<td>" . $fila['direccion'] . "</td>";
-                                    echo "<td>" . $fila['celular'] . "</td>";
-                                    echo "</tr>";
+            <div class="card mt-5 shadow">
+                <div class="card-body">
+                    <h2 class="card-title">Lista de Personas</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nro Documento</th>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Dirección</th>
+                                    <th>Celular</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                include("conexion.php");
+                                $con = conexion();
+                                $sql = "SELECT * FROM persona";
+                                $resultado = pg_query($con, $sql);
+                                if ($resultado) {
+                                    while ($fila = pg_fetch_assoc($resultado)) {
+                                        echo "<tr>";
+                                        echo "<td>" . $fila['documento'] . "</td>";
+                                        echo "<td>" . $fila['nombre'] . "</td>";
+                                        echo "<td>" . $fila['apellido'] . "</td>";
+                                        echo "<td>" . $fila['direccion'] . "</td>";
+                                        echo "<td>" . $fila['celular'] . "</td>";
+                                        echo "</tr>";
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='5'>Error al ejecutar la consulta SQL: " . pg_last_error($con) . "</td></tr>";
                                 }
-                            } else {
-                                echo "<tr><td colspan='5'>Error al ejecutar la consulta SQL: " . pg_last_error($con) . "</td></tr>";
-                            }
-                            pg_close($con);
-                            ?>
-                        </tbody>
-                    </table>
+                                pg_close($con);
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
