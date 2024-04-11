@@ -1,4 +1,4 @@
-create table persona1
+create table persona
 (
 	idpersona serial primary key,
 	documento varchar(8),
