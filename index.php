@@ -45,7 +45,7 @@
     </div>
 
     <div class="container px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4 text-info">Registrando datos with Railway</h1>
+      <h1>Registrando datos with Railway</h1>
       <p class="lead">PostgreSQL + PHP</p>
     </div>
     </div>
