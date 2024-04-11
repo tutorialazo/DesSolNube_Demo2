@@ -1,7 +1,7 @@
 <?php
 	function conexion(){
 
-	$host = "monorail.proxy.rlwy.net";
+	$host = "host=monorail.proxy.rlwy.net";
 	$port = "port=41590";
 	$dbname = "dbname=Postgres";
 	$user = "user=postgres";
