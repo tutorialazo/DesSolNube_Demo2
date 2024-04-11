@@ -16,7 +16,7 @@
     <style>
       h1 {
         font-weight: bold;
-        text-color: pink;
+        color: pink;
       }
       .card-container {
         display: flex;
