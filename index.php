@@ -48,6 +48,7 @@
       <h1 class="display-4 text-info">Registrando datos with Railway</h1>
       <p class="lead">PostgreSQL + PHP</p>
     </div>
+    </div>
 
     <div class="container">
       <div class="card">
