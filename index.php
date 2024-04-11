@@ -37,9 +37,8 @@
      .btn-pink:hover {
         background-color: #ff1493; /* Cambia el color de fondo al pasar el ratón */
         border-color: #ff1493; /* Cambia el color del borde al pasar el ratón */
-    }
-
-      
+    } 
+        
     </style>
 
   </head>
@@ -56,7 +55,7 @@
     </div>
 
     <div class="container px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4 text-info">Registrando datos with Railway</h1>
+      <h1 class="display-4 text-info">Registrando datos with Railway - 2024</h1>
       <p class="lead">PostgreSQL + PHP</p>
     </div>
 
