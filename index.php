@@ -28,21 +28,6 @@
       .card {
         box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
       }
-      .btn-pink {
-        color: #fff;
-        background-color: #ff69b4; /* Color rosado */
-        border-color: #ff69b4; /* Color de borde */
-      }
-      .btn-pink:hover {
-        background-color: #ff1493; /* Cambia el color de fondo al pasar el ratón */
-        border-color: #ff1493; /* Cambia el color del borde al pasar el ratón */
-      }
-
-.btn-pink:hover {
-    background-color: #ff1493; /* Cambia el color de fondo al pasar el ratón */
-    border-color: #ff1493; /* Cambia el color del borde al pasar el ratón */
-}
-
       
     </style>
 
@@ -102,7 +87,7 @@
                 </div>
               </div>
             </div>
-            <input type="submit" class="btn btn-pink float-right" value="Registrar">
+            <input type="submit" class="btn btn-info float-right" value="Registrar">
           </form>
         </div>
       </div>
@@ -112,7 +97,7 @@
       <div class="row">
         <div class="col-12 col-md">
           <img class="mb-2" src="https://www.svgrepo.com/show/508391/uncle.svg" alt="" width="24" height="24">
-          <small class="d-block mb-3 text-muted">&copy; 2024-1</small>
+          <small class="d-block mb-3 text-muted">&copy; 2023-1</small>
         </div>
       </div>
     </footer>
