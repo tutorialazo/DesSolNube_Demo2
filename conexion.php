@@ -3,7 +3,7 @@
 
 	$host = "host=monorail.proxy.rlwy.net";
 	$port = "port=21925";
-	$dbname = "dbname=Postgres";
+	$dbname = "dbname=railway";
 	$user = "user=postgres";
 	$password = "password=YdeeqpIGHxnFVEurKSncMEaXGpAzlHPY";
 
