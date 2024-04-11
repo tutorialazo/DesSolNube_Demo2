@@ -108,7 +108,7 @@
       <div class="row">
         <div class="col-12 col-md">
           <img class="mb-2" src="https://www.svgrepo.com/show/508391/uncle.svg" alt="" width="24" height="24">
-          <small class="d-block mb-3 text-muted">&copy; 2023-1</small>
+          <small class="d-block mb-3 text-muted">&copy; 2024-1</small>
         </div>
       </div>
     </footer>
