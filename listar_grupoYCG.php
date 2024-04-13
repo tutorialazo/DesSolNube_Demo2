@@ -78,7 +78,6 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th> <!-- Agrega la columna del ID -->
                     <th>Nro Documento</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
@@ -99,26 +98,20 @@
                     // Recorre los resultados de la consulta y muestra cada fila en la tabla
                     while ($fila = pg_fetch_assoc($resultado)) {
                         echo "<tr>";
-                        // Verificar si el campo 'id' está presente en la fila antes de mostrarlo
-                        if (isset($fila['id'])) {
-                            echo "<td>" . $fila['id'] . "</td>"; // Muestra el ID en la tabla
-                        } else {
-                            echo "<td>No disponible</td>"; // Mostrar un mensaje si el ID no está disponible
-                        }
-                        echo "<td>" . $fila['documento'] . "</td>";
+                        echo "<td>" . $fila['documento'] . "</td>"; // Muestra el número de documento en la tabla
                         echo "<td>" . $fila['nombre'] . "</td>";
                         echo "<td>" . $fila['apellido'] . "</td>";
                         echo "<td>" . $fila['direccion'] . "</td>";
                         echo "<td>" . $fila['celular'] . "</td>";
                         // Agrega botones de edición y eliminación
                         echo "<td>
-                                <a href='editar_persona.php?id=" . $fila['id'] . "' class='btn btn-primary'>Editar</a>
-                                <a href='eliminar_persona.php?id=" . $fila['id'] . "' class='btn btn-danger'>Eliminar</a>
+                                <a href='editar_persona.php?documento=" . $fila['documento'] . "' class='btn btn-primary'>Editar</a>
+                                <a href='eliminar_persona.php?documento=" . $fila['documento'] . "' class='btn btn-danger'>Eliminar</a>
                               </td>";
                         echo "</tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='7'>No se encontraron resultados.</td></tr>";
+                    echo "<tr><td colspan='6'>No se encontraron resultados.</td></tr>";
                 }
                 ?>
             </tbody>
@@ -129,4 +122,11 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

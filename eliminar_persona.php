@@ -1,8 +1,8 @@
 <?php
 include("conexion.php");
 $con = conexion();
-$id = $_GET['id'];
-$sql = "DELETE FROM persona WHERE id = $id";
+$documento = $_GET['documento']; 
+$sql = "DELETE FROM persona WHERE documento = '$documento'"; 
 pg_query($con, $sql);
 header("location:listar_grupoYCG.php");
 ?>
