@@ -1,10 +1,3 @@
-<?php
-include("conexion.php");
-$con = conexion();
-$sql = "SELECT * FROM persona";
-$resultado = pg_query($con, $sql);
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -85,6 +78,7 @@ $resultado = pg_query($con, $sql);
         <table class="table">
             <thead>
                 <tr>
+                    <th>ID</th> <!-- Agrega la columna del ID -->
                     <th>Nro Documento</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
@@ -95,20 +89,31 @@ $resultado = pg_query($con, $sql);
             </thead>
             <tbody>
                 <?php
-                // Recorre los resultados de la consulta y muestra cada fila en la tabla
-                while ($fila = pg_fetch_assoc($resultado)) {
-                    echo "<tr>";
-                    echo "<td>" . $fila['documento'] . "</td>";
-                    echo "<td>" . $fila['nombre'] . "</td>";
-                    echo "<td>" . $fila['apellido'] . "</td>";
-                    echo "<td>" . $fila['direccion'] . "</td>";
-                    echo "<td>" . $fila['celular'] . "</td>";
-                    // Agrega botones de edición y eliminación
-                    echo "<td>
-                            <a href='editar_persona.php?id=" . $fila['id'] . "' class='btn btn-primary'>Editar</a>
-                            <a href='eliminar_persona.php?id=" . $fila['id'] . "' class='btn btn-danger'>Eliminar</a>
-                          </td>";
-                    echo "</tr>";
+                include("conexion.php");
+                $con = conexion();
+                $sql = "SELECT * FROM persona";
+                $resultado = pg_query($con, $sql);
+                
+                // Verificar si se obtuvieron resultados
+                if ($resultado) {
+                    // Recorre los resultados de la consulta y muestra cada fila en la tabla
+                    while ($fila = pg_fetch_assoc($resultado)) {
+                        echo "<tr>";
+                        echo "<td>" . $fila['id'] . "</td>"; // Muestra el ID en la tabla
+                        echo "<td>" . $fila['documento'] . "</td>";
+                        echo "<td>" . $fila['nombre'] . "</td>";
+                        echo "<td>" . $fila['apellido'] . "</td>";
+                        echo "<td>" . $fila['direccion'] . "</td>";
+                        echo "<td>" . $fila['celular'] . "</td>";
+                        // Agrega botones de edición y eliminación
+                        echo "<td>
+                                <a href='editar_persona.php?id=" . $fila['id'] . "' class='btn btn-primary'>Editar</a>
+                                <a href='eliminar_persona.php?id=" . $fila['id'] . "' class='btn btn-danger'>Eliminar</a>
+                              </td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='7'>No se encontraron resultados.</td></tr>";
                 }
                 ?>
             </tbody>
