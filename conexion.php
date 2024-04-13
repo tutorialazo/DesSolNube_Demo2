@@ -2,7 +2,7 @@
 	function conexion(){
 
 	$host = "host=viaduct.proxy.rlwy.net";
-	$port = "port=426862";
+	$port = "port=26862";
 	$dbname = "dbname=railway";
 	$user = "user=postgres";
 	$password = "password=SIIZpYZuHrHzKtzfUhAFNdDKKPEACBSJ";
