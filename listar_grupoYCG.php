@@ -99,7 +99,12 @@
                     // Recorre los resultados de la consulta y muestra cada fila en la tabla
                     while ($fila = pg_fetch_assoc($resultado)) {
                         echo "<tr>";
-                        echo "<td>" . $fila['id'] . "</td>"; // Muestra el ID en la tabla
+                        // Verificar si el campo 'id' está presente en la fila antes de mostrarlo
+                        if (isset($fila['id'])) {
+                            echo "<td>" . $fila['id'] . "</td>"; // Muestra el ID en la tabla
+                        } else {
+                            echo "<td>No disponible</td>"; // Mostrar un mensaje si el ID no está disponible
+                        }
                         echo "<td>" . $fila['documento'] . "</td>";
                         echo "<td>" . $fila['nombre'] . "</td>";
                         echo "<td>" . $fila['apellido'] . "</td>";
@@ -124,11 +129,4 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
-</body>
-</html>
+        integrity="sha384-ApNbgh9B+Y1
