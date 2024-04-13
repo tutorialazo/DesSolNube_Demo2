@@ -154,53 +154,6 @@
             </div>
         </div>
 
-        <!-- Tabla para mostrar los datos de las personas -->
-        <div class="card mt-5">
-            <div class="card-body">
-                <h2 class="card-title text-center mb-4 text-info">Lista de Personas Registradas</h2>
-                <div class="table-responsive">
-                    <table class="table table-striped text-center">
-                        <thead class="table-info">
-                            <tr>
-                                <th>Nro Documento</th>
-                                <th>Nombre</th>
-                                <th>Apellidos</th>
-                                <th>Dirección</th>
-                                <th>Celular</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                include("conexion.php");
-                $con = conexion();
-                $sql = "SELECT * FROM persona";
-
-                // Ejecutar la consulta
-                $resultado = pg_query($con, $sql);
-                if ($resultado) {
-                  // Recorrer los resultados y mostrar cada fila en la tabla
-                  while ($fila = pg_fetch_assoc($resultado)) {
-                    echo "<tr>";
-                    echo "<td>" . $fila['documento'] . "</td>";
-                    echo "<td>" . $fila['nombre'] . "</td>";
-                    echo "<td>" . $fila['apellido'] . "</td>";
-                    echo "<td>" . $fila['direccion'] . "</td>";
-                    echo "<td>" . $fila['celular'] . "</td>";
-                    echo "</tr>";
-                  }
-                } else {
-                  echo "<tr><td colspan='5'>Error al ejecutar la consulta SQL: " . pg_last_error($con) . "</td></tr>";
-                }
-
-                // Cerrar la conexión
-                pg_close($con);
-                ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <footer class="pt-4 text-center">
         <div class="row">

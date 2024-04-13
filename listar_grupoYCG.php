@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Pagina Principal</title>
+    <title>Listado</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -89,70 +89,6 @@
         <h1 class="display-4 text-info">Registrando datos with Railway</h1>
         <p class="lead">PostgreSQL + PHP</p>
     </div>
-
-    <div class="container">
-        <div class="card mb-4">
-            <div class="card-body">
-                <form autocomplete="off" action="index-post.php" method="post" id="registrationForm">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label>Nro Documento</label>
-                                <input type="text" name="doc" maxlength="8" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label>Nombre</label>
-                                <input type="text" name="nom" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label>Apellidos</label>
-                                <input type="text" name="ape" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label>Direccion</label>
-                                <input type="text" name="dir" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label>Celular</label>
-                                <input type="text" name="cel" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-info float-right">Registrar</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Modal de confirmación -->
-        <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
-            aria-labelledby="confirmationModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="confirmationModalLabel">Registro Exitoso</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        El usuario ha sido registrado con éxito.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Tabla para mostrar los datos de las personas -->
         <div class="card mt-5">
