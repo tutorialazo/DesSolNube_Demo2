@@ -144,16 +144,11 @@
                     echo "<td>" . $fila['apellido'] . "</td>";
                     echo "<td>" . $fila['direccion'] . "</td>";
                     echo "<td>" . $fila['celular'] . "</td>";
-                    echo "<td>
-                                <a href='eliminar_persona.php?documento=" . $fila['documento'] . "' class='btn btn-danger'>Eliminar</a>
-                            </td>";
-                    echo "</tr>";
                   }
                 } else {
                   echo "<tr><td colspan='6'>Error al ejecutar la consulta SQL: " . pg_last_error($con) . "</td></tr>";
                 }
 
-                // Cerrar la conexión
                 pg_close($con);
                 ?>
                         </tbody>
