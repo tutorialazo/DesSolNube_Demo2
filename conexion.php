@@ -1,11 +1,11 @@
 <?php
 	function conexion(){
 
-	$host = "host=roundhouse.proxy.rlwy.net";
-	$port = "port=43382";
+	$host = "host=viaduct.proxy.rlwy.net";
+	$port = "port=426862";
 	$dbname = "dbname=railway";
 	$user = "user=postgres";
-	$password = "password=XCEOokvyFjLvJoCWAxDkpnLgbRNihnRl";
+	$password = "password=SIIZpYZuHrHzKtzfUhAFNdDKKPEACBSJ";
 
 	$db = pg_connect("$host $port $dbname $user $password");
 
