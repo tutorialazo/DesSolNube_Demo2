@@ -79,7 +79,7 @@
             <img src="index2.png" alt="Index Logo">
             <span>Index</span>
         </a>
-        <a class="navbar-brand"href="listar.php" >
+        <a class="" href="listar.php" >
             <span>Listar Registros</span>
         </li>
 
