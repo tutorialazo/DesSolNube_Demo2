@@ -1,8 +1,9 @@
 FROM php:8.1-apache
 
-# Instalar dependencias necesarias para PostgreSQL y otras herramientas
+# Instalar dependencias necesarias para PostgreSQL, herramientas y libxml2
 RUN apt-get update && apt-get install -y \
     libpq-dev \
+    libxml2-dev \
     unzip \
     git \
     && docker-php-ext-install pdo pgsql pdo_pgsql \
