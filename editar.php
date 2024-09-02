@@ -1,37 +1,48 @@
 <?php
-// Conectar a la base de datos
-$host = 'localhost';
-$db = 'nombre_de_la_base_de_datos';
-$user = 'usuario';
-$pass = 'contraseña';
+// Incluir la función de conexión
+include 'conexion.php';
 
-$pdo = new PDO("pgsql:host=$host;dbname=$db", $user, $pass);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// Conectar a la base de datos
+$db = conexion();
 
 // Obtener la lista de entidades
 $sql = "SELECT id, nombre FROM entidades"; // Cambia 'entidades' y 'nombre' según tu esquema
-$stmt = $pdo->query($sql);
-$entidades = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$result = pg_query($db, $sql);
+
+if (!$result) {
+    die("Error en la consulta: " . pg_last_error($db));
+}
+
+$entidades = pg_fetch_all($result);
 
 // Manejar la selección y actualización
 $selectedId = $_GET['id'] ?? null;
 $entity = null;
 
 if ($selectedId) {
-    $sql = "SELECT * FROM entidades WHERE id = :id"; // Cambia 'entidades' y los campos según tu esquema
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute(['id' => $selectedId]);
-    $entity = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Obtener los datos de la entidad seleccionada
+    $sql = "SELECT * FROM entidades WHERE id = $1"; // Cambia 'entidades' y los campos según tu esquema
+    $result = pg_query_params($db, $sql, [$selectedId]);
+
+    if (!$result) {
+        die("Error en la consulta: " . pg_last_error($db));
+    }
+
+    $entity = pg_fetch_assoc($result);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nombre = $_POST['nombre'];
+        
         // Actualizar la entidad
-        $sql = "UPDATE entidades SET nombre = :nombre WHERE id = :id"; // Cambia según tu esquema
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(['nombre' => $nombre, 'id' => $selectedId]);
+        $sql = "UPDATE entidades SET nombre = $1 WHERE id = $2"; // Cambia según tu esquema
+        $result = pg_query_params($db, $sql, [$nombre, $selectedId]);
+
+        if (!$result) {
+            die("Error en la consulta: " . pg_last_error($db));
+        }
 
         // Redirigir o mostrar mensaje de éxito
-        header('Location: listar.php'); // Redirige a la página principal o a una página de confirmación
+        header('Location: editar.php'); // Redirige a la página principal o a una página de confirmación
         exit;
     }
 }
