@@ -79,9 +79,9 @@
             <img src="index2.png" alt="Index Logo">
             <span>Index</span>
         </a>
-        <a class="" href="listar.php" >
+        <a class="navbar-brand" href="listar.php">
             <span>Listar Registros</span>
-        </li>
+        </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
