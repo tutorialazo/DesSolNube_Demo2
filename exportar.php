@@ -13,7 +13,8 @@ if (isset($_GET['format'])) {
 }
 
 function exportExcel($db) {
-    require 'vendor/autoload.php'; // Cargar PhpSpreadsheet
+    // Requerir la clase PhpSpreadsheet manualmente
+    require '/usr/src/php/libraries/PhpSpreadsheet/vendor/autoload.php';
     use PhpOffice\PhpSpreadsheet\Spreadsheet;
     use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -56,7 +57,7 @@ function exportExcel($db) {
 }
 
 function exportPDF($db) {
-    require 'vendor/fpdf/fpdf.php';
+    require '/usr/src/php/libraries/FPDF/fpdf.php';
 
     $pdf = new FPDF();
     $pdf->AddPage();
