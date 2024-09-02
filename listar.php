@@ -53,8 +53,7 @@
       <h5 class="my-0 mr-md-auto font-weight-normal"><img src="index2.png" style="width: 30px; position: absolute;"> <span style="position: relative; left: 35px;">Index</span></h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="index.php">Registrar</a>
-        <a class="p-2 text-dark" href="exportar.php?format=excel">Excel</a>
-    <a class="p-2 text-dark" href="exportar.php?format=pdf">PDF</a>
+        <a class="p-2 text-dark" href="editar.php">Editar</a>
       </nav>
     </div>
 
