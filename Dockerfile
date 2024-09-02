@@ -1,30 +1,29 @@
 FROM php:8.1-apache
 
-# Instalar dependencias necesarias para PostgreSQL y Composer
+# Instalar dependencias necesarias para PostgreSQL y otras herramientas
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     unzip \
     git \
-    && docker-php-ext-install pdo pgsql pdo_pgsql \
-    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    && docker-php-ext-install pdo pgsql pdo_pgsql
 
-# Copiar el archivo composer.json y composer.lock para instalar dependencias
-COPY composer.json composer.lock /var/www/html/
+# Instalar las bibliotecas FPDF y PhpSpreadsheet
+RUN mkdir -p /usr/src/php/libraries \
+    && cd /usr/src/php/libraries \
+    && curl -o PhpSpreadsheet.zip -L https://github.com/PHPOffice/PhpSpreadsheet/archive/refs/heads/master.zip \
+    && unzip PhpSpreadsheet.zip \
+    && rm PhpSpreadsheet.zip \
+    && mv PhpSpreadsheet-* PhpSpreadsheet \
+    && curl -o FPDF.zip -L https://github.com/Setasign/FPDF/archive/refs/heads/master.zip \
+    && unzip FPDF.zip \
+    && rm FPDF.zip \
+    && mv FPDF-* FPDF
 
-# Instalar dependencias de PHP (PhpSpreadsheet, FPDF, etc.)
-RUN composer install --no-scripts --no-autoloader
-
-# Copiar el resto de la aplicación al contenedor
+# Copiar contenido de toda la app en mi contenedor
 COPY . /var/www/html/
 
-# Ejecutar Composer autoload
-RUN composer dump-autoload --optimize
-
-# Cambiar permisos de los archivos si es necesario (opcional)
-RUN chown -R www-data:www-data /var/www/html
+# Configurar autoload en el index.php de tu aplicación
+RUN echo "<?php\nrequire '/usr/src/php/libraries/PhpSpreadsheet/vendor/autoload.php';\nrequire '/usr/src/php/libraries/FPDF/fpdf.php';\n" >> /var/www/html/index.php
 
 # Expone el puerto 80
 EXPOSE 80
-
-# Iniciar Apache
-CMD ["apache2-foreground"]
