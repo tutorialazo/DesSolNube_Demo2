@@ -1,12 +1,12 @@
 FROM php:8.1-apache
 
-# Instalar dependencias necesarias para PostgreSQL, herramientas y php-xml
+# Instalar dependencias necesarias para PostgreSQL y otras herramientas
 RUN apt-get update && apt-get install -y \
     libpq-dev \
-    php-xml \
     unzip \
     git \
-    && docker-php-ext-install pdo pgsql pdo_pgsql
+    && docker-php-ext-install pdo pgsql pdo_pgsql \
+    && docker-php-ext-install xml
 
 # Instalar las bibliotecas FPDF y PhpSpreadsheet
 RUN mkdir -p /usr/src/php/libraries \
