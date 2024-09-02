@@ -1,8 +1,9 @@
 FROM php:8.1-apache
 
-# Instalar dependencias necesarias para PostgreSQL y otras herramientas
+# Instalar dependencias necesarias para PostgreSQL, herramientas y php-xml
 RUN apt-get update && apt-get install -y \
     libpq-dev \
+    php-xml \
     unzip \
     git \
     && docker-php-ext-install pdo pgsql pdo_pgsql
@@ -19,11 +20,11 @@ RUN mkdir -p /usr/src/php/libraries \
     && rm FPDF.zip \
     && mv FPDF-* FPDF
 
-# Copiar contenido de toda la app en mi contenedor
+# Copiar contenido de toda la app en el contenedor
 COPY . /var/www/html/
 
 # Configurar autoload en el index.php de tu aplicación
 RUN echo "<?php\nrequire '/usr/src/php/libraries/PhpSpreadsheet/vendor/autoload.php';\nrequire '/usr/src/php/libraries/FPDF/fpdf.php';\n" >> /var/www/html/index.php
 
-# Expone el puerto 80
+# Exponer el puerto 80
 EXPOSE 80

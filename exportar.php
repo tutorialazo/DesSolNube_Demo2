@@ -1,4 +1,10 @@
 <?php
+require 'vendor/autoload.php'; // Cargar PhpSpreadsheet
+require 'vendor/fpdf/fpdf.php'; // Cargar FPDF
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 include('conexion.php');
 $db = conexion();
 
@@ -13,11 +19,6 @@ if (isset($_GET['format'])) {
 }
 
 function exportExcel($db) {
-    // Requerir la clase PhpSpreadsheet manualmente
-    require '/usr/src/php/libraries/PhpSpreadsheet/vendor/autoload.php';
-    use PhpOffice\PhpSpreadsheet\Spreadsheet;
-    use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-
     $spreadsheet = new Spreadsheet();
     $sheet = $spreadsheet->getActiveSheet();
 
@@ -57,8 +58,6 @@ function exportExcel($db) {
 }
 
 function exportPDF($db) {
-    require '/usr/src/php/libraries/FPDF/fpdf.php';
-
     $pdf = new FPDF();
     $pdf->AddPage();
     $pdf->SetFont('Arial', 'B', 12);
