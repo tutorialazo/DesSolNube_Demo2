@@ -16,7 +16,7 @@
     <style>
         h1 {
             font-weight: bold;
-            color: #333;
+            color: #33333;
         }
 
         .card-container {
